@@ -49,6 +49,7 @@ export default function StatisticalComponent() {
 
     const width = doc.internal.pageSize.getWidth();
     const height = doc.internal.pageSize.getHeight();
+    const fecha = new Date();
 
     const reportHTMLTags = [];
     reportHTMLTags.push(document.querySelector('#enablingTitles'));
@@ -63,7 +64,7 @@ export default function StatisticalComponent() {
       const reportHTMLImage = await htmlToImage.toPng(reportHTMLTags[i]);
       doc.addImage(Logo, 'PNG', width - 70, 5, 60, 15, `logo`);
       doc.addImage(reportHTMLImage, 'PNG', 8, 40, width - 20, (width / reportHTMLTags[i].offsetWidth) * reportHTMLTags[i].offsetHeight, `body${i}`);
-      doc.setFontSize(15);
+      doc.setFontSize(16);
       doc.setTextColor(28, 96, 84);
       doc.text('Reporte Gerencial de Registros de Información Forestal y Fauna Silvestre', width / 2, 25, 'center');
 
@@ -77,7 +78,7 @@ export default function StatisticalComponent() {
       });
     }
 
-    doc.save('report.pdf');
+    doc.save(`reporte gerencial CE-SNIFFS ${fecha.toISOString().split('T')[0]}.pdf`);
     // setIsExporting(false);
   };
 

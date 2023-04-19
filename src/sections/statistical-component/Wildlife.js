@@ -23,30 +23,39 @@ export default function Wildlife({data}) {
       <Grid item xs={12}>
         <Header title={'FAUNA SILVESTRE'} />
       </Grid>
-
+      <Grid item xs={6}>
+        <Card>
+          <Typography variant="h4" component="h4" textAlign="center">
+            Licencias de Caza Deportiva emitidas
+          </Typography>
+          <Typography variant="h3" component="h3" textAlign="center" sx={{ color: theme.palette.secondary.main }}>
+            {sportHuntingLicenses.reduce((pre, item) => (pre + item.value), 0).toLocaleString("es-PE")}
+          </Typography>
+        </Card>
+      </Grid>
+      <Grid item xs={6}>
+        <Card>
+          <Typography variant="h4" component="h4" textAlign="center">
+            Centros de Manejo y Cria
+          </Typography>
+          <Typography variant="h3" component="h3" textAlign="center" sx={{ color: theme.palette.secondary.main }}>
+            {managementAndBreedingCenters.reduce((pre, item) => (pre + item.value), 0).toLocaleString("es-PE")}
+          </Typography>
+        </Card>
+      </Grid>
       <Grid item xs={6}>
         <CustomAppChart
-          title="Licencias de caza deportiva"
-          subheader="Total licencias Emitidas por Autoridad"
+          title="Licencias de caza emitidas por Autoridad"
+//          subheader="Total de licencias emitidas por Autoridad"
           chartData={sportHuntingLicenses}
           colors={[theme.palette.chart.lightGreen[0]]}
           dataLabelsOffsetX={30}
         />
       </Grid>
       <Grid item xs={6}>
-        <Card>
-          <Typography variant="h3" component="h3" textAlign="center">
-            Número total de licencias de caza deportiva
-          </Typography>
-          <Typography variant="h2" component="h2" textAlign="center" sx={{ color: theme.palette.secondary.main }}>
-            {sportHuntingLicenses.reduce((pre, item) => (pre + item.value), 0).toLocaleString("en-US")}
-          </Typography>
-        </Card>
-      </Grid>
-      <Grid item xs={12}>
         <Card sx={{ p: 2 }}>
-          <CardHeader subheader={'Centros de  Manejo y Cría'} />
-          <Stack direction="row" spacing={2}>
+          <CardHeader title={'Recuento por tipo de centro de manejo'} />
+          <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" justifyContent="center" alignItems="baseline">
             {managementAndBreedingCenters.map((item, index) => (
               <Stack key={index} direction="column" justifyContent="space-between" sx={{ pt: 2 }}>
                 <Typography variant="h6" component="h6" textAlign="center">
