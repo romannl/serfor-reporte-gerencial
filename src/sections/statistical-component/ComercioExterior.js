@@ -32,7 +32,7 @@ export default function ComercioExterior({ data }) {
 
       <Grid item xs={12} md={6}>
         <CustomLineChart
-          title="EXPORTACIONES E IMPORTACIONES"
+          title="Exportaciones e Importaciones"
           chartLabels={exportsAndImports.chartLabels}
           chartData={exportsAndImports.chartData}
         />
@@ -54,7 +54,7 @@ export default function ComercioExterior({ data }) {
       </Grid>
       <Grid item xs={12} md={6}>
         <CustomAppChart
-          title="Top de los 10 Paises de Mayor Madera Exportada segun Valor FOB($)"
+          title="Top 10 Paises de Madera Exportada segun Valor FOB (Millones $)"
           chartData={topExportedWoodsChart}
           colors={[theme.palette.chart.darkBlue[0]]}
           dataLabelsOffsetX={100}
@@ -62,7 +62,7 @@ export default function ComercioExterior({ data }) {
       </Grid>
       <Grid item xs={12} md={6}>
         <CustomAppChart
-          title="Top de los 10 Paises de Mayor Madera Importada segun Valor FOB($)"
+          title="Top 10 Paises de Madera Importada segun Valor CIF (Millones $)"
           chartData={topImportedWoodsChart}
           colors={[theme.palette.chart.darkBlue[0]]}
           dataLabelsOffsetX={100}

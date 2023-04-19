@@ -45,7 +45,7 @@ export default function Summary({ summaryData, totalAmount, totalSurface, ...oth
               </Grid>
               <Grid item xs={4}>
                 <Typography variant="subtitle2" textAlign="right">
-                  {parseFloat(info.surface).toFixed(2)}
+                  {info.surface.toLocaleString("es-PE")}
                 </Typography>
               </Grid>
             </Grid>
@@ -64,7 +64,7 @@ export default function Summary({ summaryData, totalAmount, totalSurface, ...oth
             </Grid>
             <Grid item xs={4}>
               <Typography variant="subtitle2" textAlign="right">
-                {parseFloat(totalSurface).toFixed(2)}
+                {totalSurface.toLocaleString("es-PE")}
               </Typography>
             </Grid>
           </Grid>

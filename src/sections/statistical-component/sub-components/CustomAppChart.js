@@ -55,7 +55,7 @@ export default function CustomAppChart({ title, subheader, chartData, colors, da
     dataLabels: {
       enabled: true,
       offsetX: dataLabelsOffsetX,
-      formatter: (val) => val.toLocaleString('en-US'),
+      formatter: (val) => val.toLocaleString('es-PE'),
       style: {
         fontSize: '11px',
         colors: ['#000'],
